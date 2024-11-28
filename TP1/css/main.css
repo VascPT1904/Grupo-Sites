@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.s2{
+    margin-left: 10px;
+}
+.Vasco {
+    position: absolute;
+    color: #ff0000;
+    right: 20px;
+    top: 47px;
+}
+
+.s1{
+    color: red;
+}
+.s2{
+    color: red;
+}
+
+.Vasco:hover {
+    border: 1px solid #ff0000;
+    padding: 2px;
+}
+
+.navbar {
+    display: absolute;
+    top: 10px;
+    
+    
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    margin-right: 100px; 
+}
+
+.navbar-nav .nav-item {
+    margin-left: 50px;
+}
+
+.nav-link {
+    margin-right: 100px;
+    color: black;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    text-decoration-color:red;
+}
+
+.nav-item {
+    display: absolute;
+    right: 100px;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 23px;
+    height: 3px;
+    margin: 5px;
+    background-color: black;
+    transition: all 0.5s ease;
+}
+
+.change .bar1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: rotate(45deg) translate(-5px, -8px);
+}
+
+.carousel-item img {
+    max-width: 50%;
+    display: absolute;
+    margin-top: 0; 
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-left: auto;
+
+}
+
+#carouselExampleIndicators {
+    margin-top: 100px;
+    clip-path: polygon(0 0, 100% 0, 100% 65%, 0 100%);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    
+    padding: 50px;
+    margin-top: -60px;
+    
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    padding: 50px;
+    margin-top: -60px;
+    
+}
+
+.myskills {
+    margin-top: 50px;
+}
+
+.myskills2 {
+    margin-top: 25px;
+}
+
+.cardSkills1 {
+    margin-top: 75px;
+}
+
+.cardSkills2 {
+    margin-top: -325px;
+    margin-left: 400px;
+}
+
+.cardSkills3 {
+    margin-top: -400px;
+    margin-left: 800px;
+}
+
+.cardSkills4 {
+    margin-top: -450px;
+    margin-left: 1200px;
+}
+
+.progress-container {
+    margin-bottom: 20px;
+}
+
+.header {
+    margin-top: 0;
+}
+
+.image-mav {
+    height: 385px;
+    margin: auto;
+    
+}
+.image-mop{
+    height: 385px;
+    margin: auto;
+}
+.image-pds {
+    height: 360px;
+    margin: auto;
+}
+.image-python{
+    height: 295px;
+    width: 300px;
+    margin: auto;
+}
+.image-java{
+    height: 250px;
+    width: 300px;
+    margin: auto;
+}
+.image-c{
+    height: 300px;
+    width: 300px;
+    margin: auto;
+}
+.image-css{
+    height: 300px;
+    width: 300px;
+    margin: auto;
+}
+
+.card:hover {
+    background-color: rgb(230, 119, 119);
+}
+.card2{
+    background-color: white;
+}
+
+.card-text {
+    color: black;
+}
+
+.card2:hover {
+    background-color: rgb(230, 119, 119);
+}
+
+.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
