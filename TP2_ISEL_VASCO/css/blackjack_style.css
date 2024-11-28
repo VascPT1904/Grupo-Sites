@@ -1,0 +1,32 @@
+.container-result{
+    margin-top: 10px;
+}
+.container-button{
+    margin-top: 10px;
+}
+.btn{
+    margin-top: 10px;
+    margin-right: 25px;
+}
+.card-image {
+    width: 150px; 
+    height: 200px; 
+    margin-right: -90px; 
+    transform: rotate(5deg);
+    
+}
+.container-cards{
+    display: flex;
+    margin-right: 100px; 
+}
+.container-title{
+    background-image: url('../img/png/table');
+    margin: auto;
+}
+.cards{
+    background-image: url('../img/png/mat');
+}
+
+
+
+
