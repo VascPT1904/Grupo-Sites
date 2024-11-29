@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Set the character set and the title of the document -->
+    <meta charset="utf-8">
+    <title>FotoPrint</title>
+
+    <!-- Include Bootstrap CSS from a CDN for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Include Bootstrap Icons CSS from a CDN for icon support -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Include custom styling from a local CSS file -->
+    <link rel="stylesheet" href="css/styling.css">
+
+    <!-- Include JavaScript files for the application logic -->
+    <script src="js/FotoPrint_manager.js"></script>
+    <script src="js/FotoPrint.js"></script>
+    <script src="js/DrawingObjects.js"></script>
+</head>
+
+<body class="body bg-secondary">
+    <!-- Header section with application title and description -->
+    <header class="text-center">
+        <h1><i class="bi bi-camera-fill"></i> FotoPrint <i class="bi bi-camera-fill"></i></h1>
+        <h2>Make your own photos!</h2>
+    </header>
+
+    <!-- Button section with various actions -->
+    <div class="buttons bg-light d-flex flex-row flex-wrap align-items-end">
+        <!-- Button to save the canvas as an image -->
+        <button id="save-as-image" class="btn btn-primary" style="margin-right: 10px;">
+            <i class="bi bi-download"></i>
+            Save Image
+        </button>
+
+        <!-- Button to remove objects from the canvas -->
+        <button id="remove" class="btn btn-danger" style="margin-right: 10px;">
+            <i class="bi bi-trash2-fill"></i>
+            Delete
+        </button>
+
+        <!--  <button id="remove" class="btn btn-success" style="margin-right: 10px;">
+            <i class="bi bi-add text -fill"></i>
+            Add Text
+        </button>-->
+
+        <div style="padding-left: 50px;">
+            <label for="colorPicker">Choose Image Color:</label>
+            <input type="color" id="colorPicker" value="#add8e6">
+        </div>
+        <div style="padding-left: 50px;">
+            <label for="backgroundPicker">Choose Background Color:</label>
+            <input type="color" id="backgroundPicker" value="#FFFFFF">
+        </div>
+    </div>
+
+
+    <!-- Section for displaying the main canvas for creating photos -->
+    <!--<div>
+        <h3>Choose your object:</h3>
+        <canvas id="canvas-choose" width="1520" height="210">
+            Your browser doesn't recognize the canvas element
+        </canvas>
+    </div>
+-->
+    <div>
+        <h3>Preview your photo:</h3>
+        <canvas id="canvas" width="1500" height="500">
+            Your browser doesn't recognize the canvas element
+        </canvas>
+    </div>
+
+    <!-- Script to call the 'main' function when the window loads -->
+    <script>
+        window.onload = main;
+    </script>
+
+    <!-- Include Bootstrap JS from a CDN for additional functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
