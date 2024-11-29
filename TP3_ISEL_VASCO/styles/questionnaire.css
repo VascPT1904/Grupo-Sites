@@ -1,0 +1,13 @@
+.container-title{
+    background-color: cadetblue;
+}
+div.container-boxes{
+    background-color: whitesmoke;
+}
+div.container-boxes:hover {
+    color:rgb(116, 134, 177);
+   
+}
+.container-title2{
+    background-color: rgb(191, 172, 86)
+}

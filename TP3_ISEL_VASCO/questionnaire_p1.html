@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Caracterização</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/questionnaire.css">
+    <script src="scripts/form_manager.js" defer></script>
+</head>
+
+<body class="container-title">
+    <div class="container d-flex align-items-center justify-content-center">
+        <h1 style="font-size: 60px;">Caracterização</h1>
+    </div>
+    <div class="container-boxes col-11 mx-auto " style="border-radius: 15px; padding: 20px;">
+        <h1 style="font-size: 30px; padding-bottom: 15px;">1. Qual é a sua idade?*</h1>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="age" id="age1" value=">18" required>
+            <label class="form-check-label" for="age1">>18</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="age" id="age2" value="18-24" required>
+            <label class="form-check-label" for="age2">18-24</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="age" id="age3" value="25-29" required>
+            <label class="form-check-label" for="age3">25-29</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="age" id="age4" value="30-34" required>
+            <label class="form-check-label" for="age4">30-34</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="age" id="age5" value="35-40" required>
+            <label class="form-check-label" for="age5">35-40</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="age" id="age6" value=">40" required>
+            <label class="form-check-label" for="age6">>40</label>
+        </div>
+    </div>
+
+    <div class="container-title d-flex align-items-center justify-content-center" style="padding: 15px;"></div>
+
+    <div class="container-boxes col-11 mx-auto" style="border-radius: 15px; padding: 20px;">
+        <h1 style="font-size: 30px; padding-bottom: 15px;">2. Com que género é que se identifica com?*</h1>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="gender1" value="Masculino" required>
+            <label class="form-check-label" for="gender1">Masculino</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="gender2" value="Feminino" required>
+            <label class="form-check-label" for="gender2">Feminino</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="gender3" value="Não-Binario" required>
+            <label class="form-check-label" for="gender3">Não-Binario</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="gender4" value="Outro" required>
+            <label class="form-check-label" for="gender4">Outro</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="gender5" value="Prefiro não responder" required>
+            <label class="form-check-label" for="gender5">Prefiro não responder</label>
+        </div>
+    </div>
+
+    <div class="container-title d-flex align-items-center justify-content-center" style="padding: 15px;"></div>
+    
+    <div class="container-boxes col-11 mx-auto" style="border-radius: 15px; padding: 20px;">
+        <h1 style="font-size: 30px; padding-bottom: 15px;">3. Com que frequência usa a internet?*</h1>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="freq" value="Diariamente" required>
+            <label class="form-check-label" for="freq1">Diariamente</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="freq" value="Algumas vezes por semana" required>
+            <label class="form-check-label" for="freq2">Algumas vezes por semana</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="freq" value="Algumas vezes por mês" required>
+            <label class="form-check-label" for="freq3">Algumas vezes por mês</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="freq" value="Raramente" required>
+            <label class="form-check-label" for="freq4">Raramente</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="freq" value="Nunca" required>
+            <label class="form-check-label" for="freq5">Nunca</label>
+        </div>
+    </div>
+
+    <div class="container-title d-flex align-items-center justify-content-center" style="padding: 15px;"></div>
+
+    <div class="container-boxes col-11 mx-auto" style="border-radius: 15px; padding: 20px;">
+        <h1 style="font-size: 30px; padding-bottom: 15px;">4. Indique os 3 browsers que mais aprecia*</h1>
+        <div class="container">
+            <select id="firstBrowser"class="form-select" aria-label="Default select example">
+                <option selected disabled hidden>1º Lugar</option>
+                <option value="Google Chrome">Google Chrome</option>
+                <option value="Safari">Safari</option>
+                <option value="Mozilla Firefox">Mozilla Firefox</option>
+                <option value="Brave">Brave</option>
+                <option value="Vivaldi">Vivaldi</option>
+                <option value="Opera">Opera</option>
+            </select>
+        </div>
+        <div class="container" style="padding-top: 25px;">
+            <select id="secondBrowser" class="form-select" aria-label="Default select example">
+                <option selected disabled hidden>2º Lugar</option>
+                <option value="Google Chrome">Google Chrome</option>
+                <option value="Safari">Safari</option>
+                <option value="Mozilla Firefox">Mozilla Firefox</option>
+                <option value="Brave">Brave</option>
+                <option value="Vivaldi">Vivaldi</option>
+                <option value="Opera">Opera</option>
+            </select>
+        </div>
+        <div class="container" style="padding-top: 25px;">
+            <select id="thirdBrowser" class="form-select" aria-label="Default select example">
+                <option selected disabled hidden>3º Lugar</option>
+                <option value="Google Chrome">Google Chrome</option>
+                <option value="Safari">Safari</option>
+                <option value="Mozilla Firefox">Mozilla Firefox</option>
+                <option value="Brave">Brave</option>
+                <option value="Vivaldi">Vivaldi</option>
+                <option value="Opera">Opera</option>
+            </select>
+        </div>
+    </div>    
+
+    <div class="container-title d-flex align-items-center justify-content-center" style="padding: 15px;"></div>
+
+    <div class="container-boxes col-11 mx-auto " style="border-radius: 15px; padding: 20px;">
+        <h1 style="font-size: 30px; padding-bottom: 15px;">5. Conhece outros sites de organização e pesquisa de imagens?*</h1>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="other" id="other" value="Não" required>
+                <label class="form-check-label" for="other1">Não</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="other" id="other" value="Sim" required>
+                <label class="form-check-label" for="other2">Sim</label>
+            </div>
+            <div class="input-group mb-3" style="padding-top: 15px;">
+                <span class="input-group-text" id="inputGroup-sizing-default">Se sim quais?</span>
+                <input id="otherSites" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+        </div>
+    </div>
+
+    <div class="container-title d-flex align-items-center justify-content-center" style="padding: 15px;"></div>
+
+    <div class="container d-flex align-items-center justify-content-center">
+        <h1 style="font-size: 60px;">Tarefas</h1>
+    </div>
+
+    <div class="container-boxes col-11 mx-auto" style="border-radius: 15px; padding: 20px;">
+        <div class="container">
+            <h1 style="font-size: 40px;padding-bottom: 25px;">Tarefa 1 - Explorar</h1>
+        </div>
+        <div class="container">
+            <h1 style="font-size: 20px;">Explore o site livremente e indique se encontrou algum erro ou se sentiu alguma dificuldade em perceber a funcionalidade das opções.</h1>
+        </div>
+        <div class="mb-3" style="padding-bottom: 25px;">
+            <label for="exampleFormControlTextarea1" class="form-label"></label>
+            <textarea id="text1" class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
+        </div>
+    </div>
+
+    <div class="container-title d-flex align-items-center justify-content-center" style="padding: 15px;"></div>
+
+    <div class="container-boxes col-11 mx-auto" style="border-radius: 15px; padding: 20px;">
+        <div class="container">
+            <h1 style="font-size: 40px;padding-bottom: 25px;">Tarefa 2 - Pesquisar Catergorias</h1>
+        </div>
+        <div class="container">
+            <h1 style="font-size: 20px;">Explore o site livremente e indique se encontrou algum erro ou se sentiu alguma dificuldade em perceber a funcionalidade das opções.</h1>
+        </div>
+        <div class="mb-3" style="padding-bottom: 25px;">
+            <label for="exampleFormControlTextarea1" class="form-label"></label>
+            <textarea id="text2" class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
+        </div>
+    </div>
+
+    <div class="container-title d-flex align-items-center justify-content-center" style="padding: 15px;"></div>
+
+    <div class="container-boxes col-11 mx-auto" style="border-radius: 15px; padding: 20px;">
+        <div class="container">
+            <h1 style="font-size: 40px;padding-bottom: 25px;">Tarefa 3 - Pesquisa Cor</h1>
+        </div>
+        <div class="container">
+            <h1 style="font-size: 20px;">Escolha a opção de pesquisa por cor dominante, selecione uma cor à sua escolha e observe os resultados. Que dificuldades encontrou?</h1>
+        </div>
+        <div class="mb-3" style="padding-bottom: 25px;">
+            <label for="exampleFormControlTextarea1" class="form-label"></label>
+            <textarea id="text3" class="form-control" id="exampleFormControlTextarea3" rows="7"></textarea>
+        </div>
+    </div>
+
+    <div class="container-title d-flex align-items-center justify-content-center" style="padding: 15px;"></div>
+
+    <div class="container-boxes col-11 mx-auto" style="border-radius: 15px; padding: 20px;">
+        <div class="container">
+            <h1 style="font-size: 40px;padding-bottom: 25px;">Tarefa 4 - Pesquisa Imagens Semelhantes</h1>
+        </div>
+        <div class="container">
+            <h1 style="font-size: 20px;">Escolha a opção de pesquisa por imagens semelhantes, selecione uma imagem à sua escolha e observe os resultados. Que dificuldades encontrou?</h1>
+        </div>
+        <div class="mb-3" style="padding-bottom: 25px;">
+            <label for="exampleFormControlTextarea1" class="form-label"></label>
+            <textarea id="text4" class="form-control" id="exampleFormControlTextarea4" rows="7"></textarea>
+        </div>
+    </div>
+
+    <div class="container-title d-flex align-items-center justify-content-center" style="padding: 15px;"></div>
+
+    <div class="container-boxes col-11 mx-auto" style="border-radius: 15px; padding: 20px;">
+        <div class="container">
+            <h1 style="font-size: 40px;padding-bottom: 25px;">Tarefa 5 - Pesquisa Imagens Semelhantes</h1>
+        </div>
+        <div class="container">
+            <h1 style="font-size: 20px;">Escolha a opção de pesquisa por imagens semelhantes, selecione uma imagem à sua escolha e observe os resultados. Que dificuldades encontrou?</h1>
+        </div>
+        <div class="mb-3" style="padding-bottom: 25px;">
+            <label for="exampleFormControlTextarea1" class="form-label"></label>
+            <textarea id="text5" class="form-control" id="exampleFormControlTextarea4" rows="7"></textarea>
+        </div>
+    </div>
+    
+    <div class="container-title d-flex align-items-center justify-content-center" style="padding: 15px;"></div>
+
+    <div class="container-boxes col-11 mx-auto" style="border-radius: 15px; padding: 20px;">
+        <div class="container">
+            <h1 style="font-size: 40px;padding-bottom: 25px;">Comparação entre Tipos de Pesquisa</h1>
+        </div>
+        <div class="container">
+            <h1 style="font-size: 20px;">Qual o tipo de pesquisa que acha mais adequado e porquê?</h1>
+        </div>
+        <div class="mb-3" style="padding-bottom: 25px;">
+            <label for="exampleFormControlTextarea1" class="form-label"></label>
+            <textarea id="text6" class="form-control" id="exampleFormControlTextarea5" rows="7"></textarea>
+        </div>
+    </div>
+
+    <div class="container-title d-flex align-items-center justify-content-center" style="padding: 15px;"></div>
+
+    <div class="container d-flex align-items-center justify-content-center">
+        <h1 style="font-size: 60px;">Avaliação Global</h1>
+    </div>
+
+    <div class="container-boxes col-11 mx-auto " style="border-radius: 15px; padding: 20px;">
+        <div class="container bg-light">
+        <h1 style="font-size: 30px; padding-bottom: 25px;">1. Para cada par de adjetivos, selecione a opção que melhor descreve a sua experiência de utilização deste site.*</h1>
+        <select id="option1" class="form-select" aria-label="Default select example" >
+            <option selected disabled hidden>Sendo "0" Horrível e "7" Fantástica</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+        </select>
+        </div>
+        <div class="container bg-light" style="padding-top: 25px;">
+        <select id="option2" class="form-select" aria-label="Default select example" >
+            <option selected disabled hidden>Sendo "0" Aborrecida e "7" Estimulante</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+        </select>
+        </div>
+        <div class="container bg-light" style="padding-top: 25px;">
+            <select id="option3" class="form-select" aria-label="Default select example" >
+                <option selected disabled hidden>Sendo "0" Frustrante e "7" Gratificante</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+        </div>
+        <div class="container bg-light" style="padding-top: 25px;padding-bottom: 25px;">
+            <select id="option4" class="form-select" aria-label="Default select example" >
+                <option selected disabled hidden>Sendo "0" Dificíl e "7" Fácil</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="container-title d-flex align-items-center justify-content-center" style="padding: 15px;"></div>
+
+    <div class="container-boxes col-11 mx-auto " style="border-radius: 15px; padding: 20px;">
+            <h1 style="font-size: 30px; padding-bottom: 15px;">2. Como classifica o resultado obtido pela pesquisa por Categoria (1 significa “Mau” e 5 significa “Excelente”)? *</h1>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="result" id="result1" value="1" required>
+                <label class="form-check-label" for="result1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="result" id="result2" value="2" required>
+                <label class="form-check-label" for="result2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="result" id="result3" value="3" required>
+                <label class="form-check-label" for="result3">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="result" id="result4" value="4" required>
+                <label class="form-check-label" for="result4">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="result" id="result5" value="5" required>
+                <label class="form-check-label" for="result5">5</label>
+            </div>
+    </div>
+
+    <div class="container-title d-flex align-items-center justify-content-center" style="padding: 15px;"></div>
+
+    <div class="container-boxes col-11 mx-auto " style="border-radius: 15px; padding: 20px;">
+            <h1 style="font-size: 30px; padding-bottom: 15px;">3. Como classifica o resultado obtido pela pesquisa por Cor (1 significa “Mau” e 5 significa “Excelente”)? *</h1>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="color" id="color1" value="1" required>
+                <label class="form-check-label" for="color1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="color" id="color2" value="2" required>
+                <label class="form-check-label" for="color2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="color" id="color3" value="3" required>
+                <label class="form-check-label" for="color3">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="color" id="color4" value="4" required>
+                <label class="form-check-label" for="color4">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="color" id="color5" value="5"required>
+                <label class="form-check-label" for="color5">5</label>
+            </div>
+        
+    </div>
+
+    <div class="container-title d-flex align-items-center justify-content-center" style="padding: 15px;"></div>
+
+    <div class="container-boxes col-11 mx-auto " style="border-radius: 15px; padding: 20px;">
+        
+            <h1 style="font-size: 30px; padding-bottom: 15px;">4. Como classifica o resultado obtido pela pesquisa por Imagens Semelhantes (1 significa “Mau” e 5 significa “Excelente”)? *</h1>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="image" id="image1" value="1" required>
+                <label class="form-check-label" for="image1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="image" id="image2" value="2" required>
+                <label class="form-check-label" for="image2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="image" id="image3" value="3"required>
+                <label class="form-check-label" for="image3">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="image" id="image4" value="4"required>
+                <label class="form-check-label" for="image4">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="image" id="image5" value="5"required>
+                <label class="form-check-label" for="image5">5</label>
+            </div>
+    </div>
+
+    <div class="container-title d-flex align-items-center justify-content-center" style="padding: 15px;"></div>
+
+    <div class="container-boxes col-11 mx-auto " style="border-radius: 15px; padding: 20px;">
+            <h1 style="font-size: 30px; padding-bottom: 15px;">5. Como classifica a utilidade da pesquisa por Imagens Semelhantes (1 significa “Pouca” e 5 significa “Muita”)? *</h1>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="util" id="util1" value="1" required>
+                <label class="form-check-label" for="util1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="util" id="util2" value="2" required>
+                <label class="form-check-label" for="util2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="util" id="util3" value="3" required>
+                <label class="form-check-label" for="util3">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="util" id="util4" value="4" required>
+                <label class="form-check-label" for="util4">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="util" id="util5" value="5"required>
+                <label class="form-check-label" for="util5">5</label>
+            </div>
+    </div>
+
+    <div class="container-title d-flex align-items-center justify-content-center" style="padding: 15px;"></div>
+
+    <div class="container-boxes col-11 mx-auto " style="border-radius: 15px; padding: 20px;">
+            <h1 style="font-size: 30px; padding-bottom: 15px;">6. Como classifica o sistema de navegação do site (1 significa “Mau” e 5 significa “Excelente”)? *</h1>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="system" id="system1" value="1"required>
+                <label class="form-check-label" for="system1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="system" id="system2" value="2" required>
+                <label class="form-check-label" for="system2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="system" id="system3" value="3" required>
+                <label class="form-check-label" for="system3">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="system" id="system4" value="4" required>
+                <label class="form-check-label" for="system4">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="system" id="system5" value="5" required>
+                <label class="form-check-label" for="system5">5</label>
+            </div>
+    </div>
+
+        <div class="container-title d-flex align-items-center justify-content-center" style="padding: 15px;"></div>
+
+    <div class="container-boxes col-11 mx-auto " style="border-radius: 15px; padding: 20px;">
+            <h1 style="font-size: 30px; padding-bottom: 15px;">7. Como classifica o design do site (1 significa “Mau” e 5 significa “Excelente”)? *</h1>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="design" id="design1" value="1" required>
+                <label class="form-check-label" for="design1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="design" id="design2" value="2" required>
+                <label class="form-check-label" for="design2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="design" id="design3" value="3" required>
+                <label class="form-check-label" for="design3">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="design" id="design4" value="4" required>
+                <label class="form-check-label" for="design4">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="design" id="design5" value="5" required>
+                <label class="form-check-label" for="design5">5</label>
+            </div>
+    </div>
+
+
+    <div class="container d-flex align-items-center justify-content-center" style="padding: 20px";>
+        <button id="nextButton" class="btn btn-primary col-6" onclick="navigatetoindex();storeAnswers();">Entregar</button>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>
