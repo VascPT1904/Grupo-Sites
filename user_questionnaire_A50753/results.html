@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Questionnaire</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/results.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Resultados</h1>
+      <!--tabela-->
+      <div id="results-container"></div>
+      <script>
+        // Recupera a lista de usuários do localStorage
+        var userList = JSON.parse(localStorage.getItem('userList')) || [];
+        
+        // Obtém a referência ao contêiner de resultados
+        var resultsContainer = document.getElementById('results-container');
+        
+        // Verifica se há usuários para exibir
+        if (userList.length === 0) 
+        {
+            resultsContainer.innerHTML = '<p>Nenhum resultado para exibir.</p>';
+        } 
+        else 
+        {
+            // Cria uma tabela para exibir os resultados
+            var table = document.createElement('table');
+        
+            // Cabeçalho da tabela
+            var headerRow = table.insertRow(0);
+            var headers = ['Usuário', 'Idade', 'Gênero', 'Uso da Internet', 'Pref. do Navegador 1', 'Pref. do Navegador 2', 'Pref. do Navegador 3', 'Task-1', 'Task-2', 'Task-3', 'Task-4', 'Task-Compare'];
+            headers.forEach(function (header) {
+                var th = document.createElement('th');
+                th.textContent = header;
+                headerRow.appendChild(th);
+            });
+        
+            // Preenche a tabela com os dados dos usuários
+            userList.forEach(function (userData, index) 
+            {
+                var row = table.insertRow(index + 1);
+                var cells = [
+                    index + 1,
+                    userData.age,
+                    userData.gender,
+                    userData.internetUsage,
+                    userData.browserPreferences.firstOption,
+                    userData.browserPreferences.secondOption,
+                    userData.browserPreferences.thirdOption,
+                    userData.tasks.task1,
+                    userData.tasks.task2,
+                    userData.tasks.task3,
+                    userData.tasks.task4,
+                    userData.tasks.task5
+                ];
+        
+                cells.forEach(function (cellData, cellIndex) {
+                    var cell = row.insertCell(cellIndex);
+                    cell.textContent = cellData;
+                });
+            });
+        
+            // Adiciona a tabela ao contêiner de resultados
+            resultsContainer.appendChild(table);
+        }
+      </script>
+      <!--gráfico de barras-->
+      <div class="chart-container">
+        <canvas class="chart" id="fav-browser-chart"></canvas>
+        <script>
+          // Processa os dados do navegador favorito
+          var browserCount = {
+              'Chrome': 0,
+              'FireFox': 0,
+              'Safari': 0,
+              'Edge': 0,
+              'Opera': 0,
+              'Brave': 0,
+              'Vivaldi': 0
+          };
+          
+          userList.forEach(function (userData) {
+              var favoriteBrowser = userData.browserPreferences.firstOption;
+              browserCount[favoriteBrowser]++;
+          });
+          
+          // Cria o gráfico de barras (bar chart)
+          const ctx = document.getElementById('fav-browser-chart').getContext('2d');
+          
+          new Chart(ctx, {
+              type: 'bar',
+              data: {
+                  labels: ['Chrome', 'FireFox', 'Safari', 'Edge', 'Opera', 'Brave', 'Vivaldi'],
+                  datasets: [{
+                      label: '# of Votes',
+                      data: Object.values(browserCount),
+                      backgroundColor: [
+                          'rgba(255, 99, 132, 0.7)',
+                          'rgba(54, 162, 235, 0.7)',
+                          'rgba(255, 206, 86, 0.7)',
+                          'rgba(75, 192, 192, 0.7)',
+                          'rgba(153, 102, 255, 0.7)',
+                          'rgba(255, 159, 64, 0.7)',
+                          'rgba(201, 203, 207, 0.7)',
+                      ],
+                      borderColor: [
+                          'rgba(255, 99, 132, 1)',
+                          'rgba(54, 162, 235, 1)',
+                          'rgba(255, 206, 86, 1)',
+                          'rgba(75, 192, 192, 1)',
+                          'rgba(153, 102, 255, 1)',
+                          'rgba(255, 159, 64, 1)',
+                          'rgba(201, 203, 207, 1)',
+                      ],
+                      borderWidth: 1
+                  }]
+              },
+              options: {
+                  scales: {
+                      y: {
+                          beginAtZero: true
+                      }
+                  }
+              }
+          });
+        </script>
+      </div>
+      <!--Gráfico circular-->
+      <div class="chart-container">
+        <canvas class="chart" id="circular-chart"></canvas>
+        <script>
+          // Processa os dados do número e gênero dos utilizadores
+          var genderCount = {
+              'Masculino': 0,
+              'Feminino': 0,
+              'Não-binário': 0,
+              'Sem resposta': 0
+          };
+          
+          // Verifica se a variável 'userList' está definida
+          if (userList && Array.isArray(userList)) 
+          {
+              userList.forEach(function (userData)
+               {
+                  var userGender = userData.gender;
+                  genderCount[userGender]++;
+              });
+          }
+          
+          // Cria o gráfico de área polar (polar area chart)
+          const CircularArea = document.getElementById('circular-chart').getContext('2d');
+          
+          new Chart(CircularArea, {
+              type: 'doughnut', // Tipo de gráfico alterado para polarArea
+              data: {
+                  labels: Object.keys(genderCount),
+                  datasets: [{
+                      label: '# of Users',
+                      data: Object.values(genderCount),
+                      backgroundColor: [
+                          'rgba(255, 99, 132, 0.7)',
+                          'rgba(54, 162, 235, 0.7)',
+                          'rgba(255, 206, 86, 0.7)',
+                          'rgba(128, 128, 128, 0.7)' // Adicionado para 'Sem resposta'
+                      ],
+                      borderColor: [
+                          'rgba(255, 99, 132, 1)',
+                          'rgba(54, 162, 235, 1)',
+                          'rgba(255, 206, 86, 1)',
+                          'rgba(128, 128, 128, 1)' // Adicionado para 'Sem resposta'
+                      ],
+                      borderWidth: 1
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+              }
+          });
+        </script>
+      </div>
+    </div>
+    <a class="btn-btn" href="index.html" role="button">Voltar ao inicio</a>
+    <a class="btn-btn" href="export_import.html" role="button">Exportar</a>
+  </body>

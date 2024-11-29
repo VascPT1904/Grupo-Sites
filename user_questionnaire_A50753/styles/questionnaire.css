@@ -1,0 +1,35 @@
+        body {
+            padding-top: 60px; 
+        }
+
+        #questionnaire-info {
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #questionnaire-info i {
+            font-size: 3em; /* Ajusta o tamanho do ícone */
+        }
+
+        #questionnaire-info label {
+            margin: 15px 0; 
+        }
+
+        .btn-primary {
+            padding: 10px 20px;
+            width: auto; /* Garante que o botão não ocupa 100% da largura em telas menores */
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 0; /* Remove o espaço acima do conteúdo para a navbar em telas menores */
+            }
+
+            #questionnaire-info i {
+                font-size: 2em; /* Reduz o tamanho do ícone em telas menores */
+            }
+        }
+
+        
