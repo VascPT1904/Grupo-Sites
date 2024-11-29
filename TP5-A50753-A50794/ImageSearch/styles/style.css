@@ -1,0 +1,7 @@
+.img-thumbnail:hover{
+    scale: 125%;
+    
+}
+#canvas{
+    background-color:rgb(34, 33, 33);
+}

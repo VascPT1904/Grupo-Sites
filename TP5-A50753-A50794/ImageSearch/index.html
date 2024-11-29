@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VRoogle</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles/style.css">
+
+    <script src="scripts/Image_Processing.js"></script>
+    <script src="scripts/Database.js"></script>
+    <script src="scripts/ISearchEngine.js"></script>
+    <script src="scripts/ISearchEngine_Manager.js"></script>
+
+
+</head>
+
+<body class="body bg-dark">
+    
+   <div class="container" style="padding-top: 20px; padding-bottom: 20px;">
+        <div class="row align-items-center">
+            <div class="col-1">
+                <img src="Logo.png" class="img-thumbnail" alt="...">
+            </div>
+            <div class=>
+                <div class="input-group-lg mb-3" style="padding-top: 15px;">
+                    <div class="input-group">
+                        <select id="Keywords" class="form-select" aria-label="Default select example">
+                            <option selected disabled>Keyword</option>
+                            <option value="beach">Beach</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="face">Face</option>
+                            <option value="indoor">Indoor</option>  
+                            <option value="manmade/artificial">Manmade Artificial</option>
+                            <option value="manmade/manmade">Manmade Manmade</option>
+                            <option value="manmade/urban">Manmade Urban</option>
+                            <option value="marriage">Marrige</option>
+                            <option value="nature">Nature</option>
+                            <option value="no_people">No People</option>
+                            <option value="outdoor">Outdoor</option>
+                            <option value="party">Party</option>
+                            <option value="people">People</option>
+                            <option value="snow">Snow</option>
+                        </select>
+                        <button id="btn_keyword" class="btn bg-success" type="button">Search</button>
+                        <button id="btn_red" class="button_c" style="background-color: red; margin-left: 100px;color: red;" type="button">__</button>
+                        <button id="btn_pink" class="button_c" style="background-color: pink; margin-left: 15px; color: pink;" type="button">__</button>
+                        <button id="btn_orange" class="button_c" style="background-color: orange; margin-left: 15px;color: orange;" type="button">__</button>
+                        <button id="btn_yellow" class="button_c" style="background-color: yellow; margin-left: 15px;color: yellow;" type="button">__</button>
+                        <button id="btn_green" class="button_c" style="background-color: green; margin-left: 15px;color: green;" type="button">__</button>
+                        <button id="btn_blue" class="button_c" style="background-color: lightskyblue; margin-left: 15px;color: lightskyblue;" type="button">__</button>
+                        <button id="btn_purple" class="button_c" style="background-color: purple; margin-left: 15px;color: purple;" type="button">__</button>
+                        <button id="btn_brown" class="button_c" style="background-color: brown; margin-left: 15px;color: brown;" type="button">__</button>
+                        <button id="btn_grey" class="button_c" style="background-color: grey; margin-left: 15px;color: gray;" type="button">__</button>
+                        <button id="btn_black" class="button_c" style="background-color: black; margin-left: 15px;color: black;" type="button">__</button>
+                        <button id="btn_keyword" class="btn_stop bg-danger" style= "margin-left: 15px"  type="button">Stop Audio</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+        
+   <main class="container">
+    <section id="visualization">
+        <canvas id="canvas" width="1320" height="700" class="canvas"></canvas>
+        <canvas id="canvas2" width="220" height="220" style="background-color: white;border-radius: 50%;"></canvas>
+    </section>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfWHpiiZgzFLm6n1JGqNXkVckYskVAc_6NuzmMmz2ahXb5j-Q/viewform?embedded=true" width="1320" height="700" frameborder="0" marginheight="0" marginwidth="0">A carregar…</iframe>
+</main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    
+    <script>
+        window.onload = main;  
+    </script>
+    <script>
+        var context = new (window.AudioContext || window.webkitAudioContext)();
+        var audio = new Audio();
+        var audio2 = new Audio();
+        audio.src = "03_ElecGtr1Mic.wav";
+        audio2.src = "06_Accordion.wav";
+    
+        document.querySelector('.btn').addEventListener('click', function () {
+            audio2.pause();
+            audio2.currentTime = 0;
+            audio.currentTime = 0;
+            audio.play();
+        });
+    
+        document.querySelectorAll('.button_c').forEach(function (button) {
+            button.addEventListener('click', function () {
+                audio.pause();
+                audio.currentTime = 0;
+                audio2.currentTime = 0;
+                audio2.play();
+            });
+        });
+    
+        document.querySelectorAll('.btn_stop').forEach(function (button) {
+            button.addEventListener('click', function () {
+                audio.pause();
+                audio.currentTime = 0;
+                audio2.pause();
+                audio2.currentTime = 0;
+            });
+        });
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var canvas2 = document.getElementById("canvas2");
+        var ctx2 = canvas2.getContext("2d");
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var canvas2Radius = 30;
+
+        canvas2.style.position = "absolute";
+        canvas2.style.left = 670 + "px";
+        canvas2.style.top = 390 + "px";
+
+        function drawCircle(x, y) {
+            ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
+            ctx2.beginPath();
+            ctx2.arc(x, y, canvas2Radius, 0, 2 * Math.PI);
+            ctx2.fillStyle = "black";
+            ctx2.fill();
+        }
+        function drawLine(x1, y1, x2, y2,color) {
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.lineWidth = 15;
+            ctx.strokeStyle = color;
+            ctx.stroke();
+        }
+        function drawArc(canvasId, x, y, radius, startAngle, endAngle, anticlockwise) {
+            var canvas = document.getElementById(canvasId);
+            var ctx = canvas.getContext("2d");
+
+            ctx.beginPath();
+            ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);
+            ctx.lineWidth = 15;
+            ctx.strokeStyle = "blue"; 
+            ctx.stroke();
+        }       
+
+        ctx.font = "24px Arial";
+        ctx.fillStyle = "white";
+        ctx.fillText("Hover over my eye!", 20, 30);   
+        drawCircle(canvas2.width/2,canvas2.height/2)
+        drawLine(425, 600, 925, 600,"red");
+        drawLine(670, 500, 670, 550,"green");
+        drawArc("canvas", 670, 300, 150, 0, Math.PI, true);
+
+        function updateCirclePosition(event) {
+        var mouseX = event.clientX - canvas2.getBoundingClientRect().left;
+        var mouseY = event.clientY - canvas2.getBoundingClientRect().top;
+
+        if (Math.sqrt((mouseX - canvas2.width / 2) ** 2 + (mouseY - canvas2.height / 2) ** 2) <= canvas2Radius + 50) {
+            drawCircle(mouseX, mouseY);
+        }
+    }
+        canvas2.addEventListener("mousemove", updateCirclePosition);
+    });
+</script>
+</body>
+
+</html>
