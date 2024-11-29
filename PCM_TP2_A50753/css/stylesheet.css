@@ -1,0 +1,55 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.table{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#dealer-cards img{
+    height: auto;
+    width: 125px;
+    margin: 2px;
+}
+
+#your-cards img{
+    height: auto;
+    width: 125px;
+    margin: 2px;
+}
+
+.gameButt, #new-game-button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 150px; 
+    height: 60px; 
+    font-size: 24px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.gameButt:hover, #new-game-button:hover {
+    background-color: darkblue;
+}
+
+/* Estilos para dispositivos móveis ou telas menores */
+@media (max-width: 768px) {
+    .gameButt, #new-game-button {
+        width: 100%; /* Largura de 100% para dispositivos móveis */
+        height: auto; /* Altura automática para dispositivos móveis */
+        padding: 10px; /* Adicione preenchimento para espaçamento interno */
+        font-size: 18px; /* Tamanho de fonte menor para dispositivos móveis */
+        margin: 5px; /* Espaçamento menor para dispositivos móveis */
+    }
+}
+
