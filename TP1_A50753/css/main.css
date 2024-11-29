@@ -1,0 +1,136 @@
+.navbar-brand {
+    font-family:MonteCarlo ;/* Estilo da marca, o nome*/
+    font-size: 30px;
+}
+
+/* Estilos para os ícones das redes sociais */
+.social-icons {
+    order: 1; /* Mova os ícones para o início (lado direito) */
+    margin-left: auto; /* Alinhe os ícones à direita */
+}
+
+.social-icons .nav-link {
+    margin-right: 10px;
+}
+
+/* Estilos para a seção de habilidades */
+#skills {
+    background-color: lightgray;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.skill-images img {
+    width: 100px; 
+    margin: 10px; 
+}
+
+.skill-images img:hover {
+    transform: scale(1.2); /* Efeito de escala ao passar o mouse */
+    transition: transform 0.3s ease;
+}
+
+.progress{
+  margin-bottom: 10px;
+}
+
+
+/* Estilo aplicado à seção sobre*/
+#About {
+  background-color: #ffffff; /* White background */
+  padding: 60px; 
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra subtil */
+}
+
+#About h1 {
+  font-family: MonteCarlo;
+  font-size: 40px; 
+  color: black; 
+}
+
+#About p {
+  font-size: 18px; 
+  line-height: 1.6; 
+  color: #333; 
+}
+
+/* borda para separar o conteudo */
+#About p {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0; 
+}
+
+
+#Projects{
+    background-color: darkgray;
+    padding: 80px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#Projects h1 {
+  font-size: 36px;
+}
+
+#Projects .prj-grid-container{
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0;
+}
+
+ .prj-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .prj-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px; 
+}
+  
+  
+  .prj-item:hover {
+    transition: transform 0.3s; 
+    transform: scale(1.05);
+    background-color: cyan; 
+  }
+
+  .prj-item img {
+    max-width: 100%; /* Adjust this value to limit the image size */
+    height: auto; /* Ajusta automaticamente a altura da imagem */
+  }
+
+  .Contact {
+    background-color: black;
+    background-position: center; 
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-label {
+    color: white;
+  }
+
+  .form-control {
+    border-radius: 0; 
+    background-color: transparent; 
+    color: white; 
+    border: 2px solid #fff; /* Adiciona borda branca */
+}
+
+.form-control::placeholder {
+  color: white; /* Set placeholder text color to white */
+}
+
+.form-control:focus {
+  border: 2px solid #17a2b8; 
+}
+
+
+  
